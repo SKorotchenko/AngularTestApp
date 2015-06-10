@@ -1,13 +1,23 @@
-<input placeholder="Enter user name" class="search">
-<ul>
-    <li>
-        <div class="user-avatar">
-            <img class="user-avatar-image" src="img/ionic.png">
+<!-- Search input block -->
+<div class="search-wrapper bottom-margin">
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search by name" ng-model="search.login">
+    </div>
+</div>
+<!--Go to login link-->
+<div class="bottom-margin">
+    <a ui-sref="login" >Go to login</a>
+</div>
+<!-- Users -->
+<div class="users-list bottom-margin">
+    <div class="media" ng-repeat="user in users | filter:search:strict">
+        <div class="media-left">
+            <img class="user-avatar-image" ng-src="{{user.avatar_url}}">
         </div>
-        <div class="user-data">
-            <span class="user-name">User name</span>
-            <span class="user-id">user id</span>
+        <div class="media-body">
+            <h4 class="media-heading user-name">{{user.login}}</h4>
+            <span class="user-id">id {{user.id}}</span>
         </div>
-    </li>
-</ul>
-<a ui-sref="login">Go to login</a>
+    </div>
+</div>
+

@@ -1,15 +1,7 @@
 define(function(){
     return [
         '$scope',
-        'userLogin',
-        'Storage',
-        function ($scope, userLogin, Storage) {
-            /*$scope.user = {
-                email:'',
-                password:'',
-                repeatPassword:''
-            };*/
-
+        function ($scope) {
             $scope.userForm = {
                 dataSent:false
             };

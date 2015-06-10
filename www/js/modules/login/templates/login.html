@@ -1,5 +1,5 @@
 <!--User form -->
-<form ng-if="!userForm.dataSent" name="userForm" id="loginForm" class="form-horizontal" novalidate ng-submit="submitForm(userForm.$valid)">
+<form ng-if="!userForm.dataSent" name="userForm" id="loginForm" class="form-horizontal bottom-margin" novalidate ng-submit="submitForm(userForm.$valid)">
     <div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine , 'has-success' : userForm.email.$valid}" >
         <label class="control-label" for="userEmail">Email</label>
         <div class="col-sm-10">
@@ -28,6 +28,6 @@
     </div>
 </form>
 <!--Message after form submit -->
-<h3 ng-if="userForm.dataSent">Thank you, your data has been sent!</h3>
-<!--Go to login link-->
+<h3 ng-if="userForm.dataSent" class="bottom-margin">Thank you, your data has been sent!</h3>
+<!--Go to users list link-->
 <a ui-sref="global">Go to main</a>
